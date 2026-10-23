@@ -12,18 +12,56 @@
         body { font-family: 'Hind Siliguri', sans-serif; background-color: #f4f6f9; }
         .daraz-orange { background-color: #f57224; }
         .daraz-orange-text { color: #f57224; }
-        .daraz-hover:hover { background-color: #d65a11; }
         .badge-discount { background: #ffe1d2; color: #f57224; }
+        
+        /* Floating WhatsApp Button Animation */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128c7e;
+        }
     </style>
 </head>
 <body class="pb-12">
 
-    <!-- Top Announcement Bar -->
-    <div class="bg-slate-900 text-white text-xs py-1 px-4 text-center flex justify-between items-center max-w-7xl mx-auto">
-        <span>🎉 Barakah Nur Fashion - প্রিমিয়াম কালেকশনে আপনাকে স্বাগতম!</span>
-        <a href="https://www.facebook.com/share/19cFQcVJE4/" target="_blank" class="hover:underline flex items-center gap-1">
-            <i class="fab font-semibold fa-facebook"></i> আমাদের ফেসবুক পেজ
-        </a>
+    <!-- Floating WhatsApp Button (সব সময় স্ক্রিনে থাকবে) -->
+    <a href="https://wa.me/8801812418091?text=হ্যালো,%20Barakah%20Nur%20Fashion%20থেকে%20পণ্য%20সম্পর্কে%20জানতে%20চাই।" target="_blank" class="whatsapp-float" title="WhatsApp-এ যোগাযোগ করুন">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Top Bar with Main Business Social Links -->
+    <div class="bg-slate-900 text-white text-xs py-2 px-4 shadow-inner">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <span class="font-semibold text-orange-400">🎉 Barakah Nur Fashion - প্রিমিয়াম কালেকশনে স্বাগতম!</span>
+            
+            <div class="flex items-center gap-3">
+                <!-- Business Facebook Page Link -->
+                <a href="https://www.facebook.com/share/19cFQcVJE4/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-2.5 py-1 rounded-full font-medium transition flex items-center gap-1.5 text-[11px]">
+                    <i class="fab fa-facebook"></i> ফেসবুক পেজ
+                </a>
+                <!-- Direct WhatsApp Top Link -->
+                <a href="https://wa.me/8801812418091" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1 rounded-full font-medium transition flex items-center gap-1.5 text-[11px]">
+                    <i class="fab fa-whatsapp"></i> 01812-418091
+                </a>
+            </div>
+        </div>
     </div>
 
     <!-- Header Section -->
@@ -44,7 +82,7 @@
             <!-- Header Actions -->
             <div class="flex items-center gap-3">
                 <button onclick="openAdminModal()" class="text-xs bg-slate-800 text-white px-3 py-2 rounded-lg font-medium hover:bg-slate-700 transition">
-                    <i class="fas fa-lock mr-1"></i> অ্যাডমিন প্যানেল
+                    <i class="fas fa-lock mr-1"></i> অ্যাডমিন
                 </button>
                 <button onclick="toggleCart()" class="relative text-gray-700 p-2">
                     <i class="fas fa-shopping-cart text-xl"></i>
@@ -63,43 +101,23 @@
     <section class="max-w-7xl mx-auto px-4 my-4">
         <div class="relative rounded-2xl overflow-hidden shadow-lg bg-gradient-to-r from-orange-500 to-amber-600 text-white p-6 md:p-12">
             <div class="max-w-lg">
-                <span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-3 inline-block">ফ্ল্যাশ সেল অফার</span>
+                <span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-3 inline-block">স্পেশাল অফার</span>
                 <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-3">প্রিমিয়াম ফ্যাশন কালেকশন ৫০% ছাড়!</h1>
-                <p class="text-sm md:text-base opacity-90 mb-6">অরিজিনাল ঘড়ি, চামড়ার মানিব্যাগ, সানগ্লাস, বেল্ট ও পারফিউমে পাচ্ছেন স্পেশাল ডিসকাউন্ট।</p>
+                <p class="text-sm md:text-base opacity-90 mb-6">অরিজিনাল ঘড়ি, চামড়ার মানিব্যাগ, সানগ্লাস, বেল্ট ও পারফিউমে পাচ্ছেন ডিসকাউন্ট।</p>
                 <a href="#products" class="bg-white text-orange-600 font-bold px-6 py-3 rounded-xl shadow-md hover:bg-gray-100 transition inline-block">এখনই কেনাকাটা করুন</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Flash Sale Countdown -->
-    <section class="max-w-7xl mx-auto px-4 my-6">
-        <div class="bg-white rounded-xl p-4 shadow-sm flex flex-wrap justify-between items-center gap-4">
-            <div class="flex items-center gap-3">
-                <span class="text-lg font-bold text-gray-800 uppercase tracking-wide flex items-center gap-2">
-                    <i class="fas fa-bolt text-amber-500 text-xl"></i> ফ্ল্যাশ সেল
-                </span>
-                <span class="text-xs text-red-500 font-semibold bg-red-50 px-2 py-1 rounded">সীমিত সময়!</span>
-            </div>
-            <div class="flex items-center gap-2 text-sm font-semibold text-slate-700">
-                <span>শেষ হতে বাকি:</span>
-                <div class="flex gap-1 text-white font-mono text-xs">
-                    <span class="bg-slate-900 px-2 py-1 rounded">08</span> :
-                    <span class="bg-slate-900 px-2 py-1 rounded">42</span> :
-                    <span class="bg-slate-900 px-2 py-1 rounded">15</span>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Main Products Grid -->
     <main id="products" class="max-w-7xl mx-auto px-4 my-6">
-        <h2 class="text-xl font-bold text-gray-800 mb-4 border-l-4 border-orange-500 pl-3">আমাদের সকল প্রোডাক্ট</h2>
+        <h2 class="text-xl font-bold text-gray-800 mb-4 border-l-4 border-orange-500 pl-3">আমাদের সকল পণ্য</h2>
         <div id="productList" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
             <!-- Products Loaded Dynamically -->
         </div>
     </main>
 
-    <!-- Footer Section with Service Promotion -->
+    <!-- Footer Section -->
     <footer class="bg-slate-900 text-gray-300 mt-16 pt-10 pb-6 border-t-4 border-orange-500">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
@@ -109,26 +127,25 @@
                     <a href="https://www.facebook.com/share/19cFQcVJE4/" target="_blank" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-orange-400 hover:bg-orange-500 hover:text-white transition">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="tel:01812418091" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-orange-400 hover:bg-orange-500 hover:text-white transition">
-                        <i class="fas fa-phone-alt"></i>
+                    <a href="https://wa.me/8801812418091" target="_blank" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-emerald-400 hover:bg-emerald-500 hover:text-white transition">
+                        <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
             </div>
 
             <div>
-                <h3 class="text-white text-lg font-bold mb-3">জরুরি নম্বর ও ডেলিভারি</h3>
-                <p class="text-sm mb-2"><i class="fas fa-headset mr-2 text-orange-500"></i> হেল্পলাইন: 01812-418091</p>
+                <h3 class="text-white text-lg font-bold mb-3">জরুরি হেল্পলাইন ও ডেলিভারি</h3>
+                <p class="text-sm mb-2"><i class="fab fa-whatsapp mr-2 text-emerald-400"></i> হোয়াটসঅ্যাপ: 01812-418091</p>
                 <p class="text-sm mb-2"><i class="fas fa-map-marker-alt mr-2 text-orange-500"></i> লোকেশন: চট্টগ্রাম, বাংলাদেশ</p>
-                <p class="text-xs text-gray-400 mt-2">ডেলিভারি চার্জ: চট্টগ্রাম সিটি ৳৭০ | সারা বাংলাদেশ ৳১৩০</p>
+                <p class="text-xs text-gray-400 mt-2">ডেলিভারি চার্জ: চট্টগ্রাম সিটি ৳৭০ | অন্যান্য জেলা ৳১৩০</p>
             </div>
 
-            <!-- Service Promotion Box -->
-            <div class="bg-slate-800/80 p-5 rounded-2xl border border-slate-700">
-                <span class="bg-orange-500/20 text-orange-400 text-xs font-bold px-2.5 py-1 rounded mb-2 inline-block">ওয়েবসাইট সার্ভিস</span>
-                <h4 class="text-white font-bold text-base mb-2">অনলাইন ই-কমার্স ওয়েবসাইট বানাতে চান?</h4>
-                <p class="text-xs text-gray-400 mb-4">যেকোনো বিজনেসের জন্য প্রফেশনাল ই-কমার্স ওয়েবসাইট ও ডিজিটাল মার্কেটিং সার্ভিসের জন্য সরাসরি যোগাযোগ করুন।</p>
-                <a href="https://www.facebook.com/share/1FXPc3Gjmm/" target="_blank" class="block text-center bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold text-xs py-2.5 px-4 rounded-xl hover:opacity-90 transition">
-                    <i class="fab fa-facebook-messenger mr-1"></i> আমাদের সার্ভিস পেজে যান
+            <!-- Service Promotion Box (ছোট ও এক কোনায় সুন্দরভাবে সাজানো) -->
+            <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700 text-xs">
+                <span class="text-gray-400 font-semibold mb-1 block">ওয়েবসাইট ডেভেলপমেন্ট</span>
+                <p class="text-gray-400 mb-3">আপনার নিজের ব্যবসার জন্য ওয়েবসাইট বানাতে সরাসরি মেসেজ দিন:</p>
+                <a href="https://www.facebook.com/share/1FXPc3Gjmm/" target="_blank" class="inline-block bg-slate-700 hover:bg-slate-600 text-orange-400 font-bold py-1.5 px-3 rounded text-[11px] transition">
+                    <i class="fab fa-facebook-messenger mr-1"></i> সার্ভিস পেজে যান
                 </a>
             </div>
         </div>
@@ -187,9 +204,9 @@
 
             <!-- Admin Login View -->
             <div id="adminLoginView" class="space-y-4 py-4">
-                <p class="text-sm text-gray-600">সুরক্ষিত প্যানেলে প্রবেশ করতে সিকিউরিটি পাসওয়ার্ড প্রবেশ করান:</p>
-                <input type="password" id="adminPasswordInput" placeholder="পাসওয়ার্ড লিখুন..." class="w-full border rounded-lg p-3 text-sm focus:outline-none focus:border-orange-500">
-                <button onclick="verifyAdminPassword()" class="w-full daraz-orange text-white font-bold py-2.5 rounded-lg">লগইন করুন</button>
+                <p class="text-sm text-gray-600">পাসওয়ার্ড লিখুন:</p>
+                <input type="password" id="adminPasswordInput" placeholder="পাসওয়ার্ড..." class="w-full border rounded-lg p-3 text-sm focus:outline-none focus:border-orange-500">
+                <button onclick="verifyAdminPassword()" class="w-full daraz-orange text-white font-bold py-2.5 rounded-lg">লগইন</button>
             </div>
 
             <!-- Admin Dashboard View -->
@@ -198,7 +215,7 @@
                 <div class="flex border-b text-sm font-semibold">
                     <button onclick="switchAdminTab('products')" id="tabProductsBtn" class="px-4 py-2 border-b-2 border-orange-500 text-orange-500">প্রোডাক্ট যোগ ও ম্যানেজ</button>
                     <button onclick="switchAdminTab('orders')" id="tabOrdersBtn" class="px-4 py-2 border-b-2 border-transparent text-gray-500">অর্ডার লিস্ট (<span id="adminOrderCount">0</span>)</button>
-                    <button onclick="switchAdminTab('settings')" id="tabSettingsBtn" class="px-4 py-2 border-b-2 border-transparent text-gray-500">সিকিউরিটি সেটিংস</button>
+                    <button onclick="switchAdminTab('settings')" id="tabSettingsBtn" class="px-4 py-2 border-b-2 border-transparent text-gray-500">সেটিংস</button>
                 </div>
 
                 <!-- Products Tab -->
@@ -218,7 +235,7 @@
                     </div>
 
                     <div>
-                        <label class="block text-xs font-semibold text-gray-600 mb-1">গ্যালারি থেকে সরাসরি ছবি সিলেক্ট করুন *</label>
+                        <label class="block text-xs font-semibold text-gray-600 mb-1">গ্যালারি থেকে ছবি সিলেক্ট করুন *</label>
                         <input type="file" id="newProdImageFile" accept="image/*" class="border p-2 rounded w-full text-sm">
                     </div>
 
@@ -246,7 +263,7 @@
                 <div id="adminTabSettings" class="hidden space-y-4">
                     <h4 class="font-bold text-gray-700">সিকিউরিটি পাসওয়ার্ড পরিবর্তন করুন</h4>
                     <input type="password" id="changeOldPass" placeholder="বর্তমান পাসওয়ার্ড" class="w-full border p-2 rounded text-sm">
-                    <input type="password" id="changeNewPass" placeholder="নতুন কঠিন পাসওয়ার্ড" class="w-full border p-2 rounded text-sm">
+                    <input type="password" id="changeNewPass" placeholder="নতুন পাসওয়ার্ড" class="w-full border p-2 rounded text-sm">
                     <button onclick="updateAdminPassword()" class="bg-orange-500 text-white font-bold px-4 py-2 rounded-lg text-sm">
                         পাসওয়ার্ড আপডেট করুন
                     </button>
@@ -373,17 +390,13 @@
             const total = sub + parseInt(delCharge);
 
             const orderData = {
-                id: orderId,
-                name, phone, address,
-                items: [...cart],
-                total,
-                date: new Date().toLocaleDateString('bn-BD')
+                id: orderId, name, phone, address, items: [...cart], total, date: new Date().toLocaleDateString('bn-BD')
             };
 
             orders.unshift(orderData);
             localStorage.setItem('bnf_orders', JSON.stringify(orders));
 
-            // Generate WhatsApp Text
+            // WhatsApp Order Text
             let text = `🛍️ *নতুন অর্ডার এসেছে (Barakah Nur Fashion)*\n\n`;
             text += `🆔 *অর্ডার আইডি:* ${orderId}\n`;
             text += `👤 *নাম:* ${name}\n`;
@@ -414,7 +427,7 @@
                 renderAdminProducts();
                 renderAdminOrders();
             } else {
-                alert('ভুল পাসওয়ার্ড! আবার চেষ্টা করুন।');
+                alert('ভুল পাসওয়ার্ড!');
             }
         }
 
@@ -433,16 +446,13 @@
             const reader = new FileReader();
             reader.onload = function(e) {
                 const newProd = {
-                    id: Date.now(),
-                    name, price, offerPrice, category,
-                    inStock: true,
-                    image: e.target.result
+                    id: Date.now(), name, price, offerPrice, category, inStock: true, image: e.target.result
                 };
                 products.unshift(newProd);
                 localStorage.setItem('bnf_products', JSON.stringify(products));
                 renderProducts();
                 renderAdminProducts();
-                alert('নতুন প্রোডাক্ট সফলভাবে যুক্ত করা হয়েছে!');
+                alert('নতুন প্রোডাক্ট যুক্ত হয়েছে!');
             };
             reader.readAsDataURL(fileInput.files[0]);
         }
@@ -519,9 +529,9 @@
             if(oldP === adminPassword && newP.length >= 4) {
                 adminPassword = newP;
                 localStorage.setItem('bnf_admin_pass', newP);
-                alert('অ্যাডমিন সিকিউরিটি পাসওয়ার্ড সফলভাবে আপডেট করা হয়েছে!');
+                alert('পাসওয়ার্ড আপডেট হয়েছে!');
             } else {
-                alert('পাসওয়ার্ড সঠিক নয় অথবা নতুন পাসওয়ার্ডটি খুব ছোট!');
+                alert('পাসওয়ার্ড সঠিক নয়!');
             }
         }
 
@@ -531,7 +541,7 @@
             document.getElementById('adminTabSettings').classList.add('hidden');
 
             if(tab === 'products') document.getElementById('adminTabProducts').classList.remove('hidden');
-                if(tab === 'orders') document.getElementById('adminTabOrders').classList.remove('hidden');
+            if(tab === 'orders') document.getElementById('adminTabOrders').classList.remove('hidden');
             if(tab === 'settings') document.getElementById('adminTabSettings').classList.remove('hidden');
         }
 
